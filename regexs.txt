@@ -1,0 +1,5 @@
+.*
+^.*
+^.*\|fu3i4yui34yf4ui\|4g4i5gjkjh
+^(.*)\|fu3i4yui34yf4ui\|4g4i5gjkjh
+^(.*)*\|fu3i4yui34yf4ui\|4g4i5gjkjh

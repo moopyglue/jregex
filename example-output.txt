@@ -1,0 +1,9 @@
+PS C:\Users\moopy\Desktop\dev\jregex\com\moopyglue>  cd 'c:\Users\moopy\Desktop\dev\jregex\com\moopyglue'; & 'c:\Users\moopy\.vscode\extensions\vscjava.vscode-java-debug-0.26.0\scripts\launcher.bat' 'C:\Program Files\AdoptOpenJDK\jdk-8.0.252.09-hotspot\bin\java.exe' '-Dfile.encoding=UTF-8' '-cp' 'C:\Users\moopy\AppData\Roaming\Code\User\workspaceStorage\f8dac6155d997160e39dd1c34281fa78\redhat.java\jdt_ws\moopyglue_a78047d0\bin' 'JRegEx'    
+Started
+                                                          .* x 1 = 958300
+                                                         ^.* x 1 = 180300
+                            ^.*\|fu3i4yui34yf4ui\|4g4i5gjkjh x 1 = 414700
+                          ^(.*)\|fu3i4yui34yf4ui\|4g4i5gjkjh x 1 = 285500
+                         ^(.*)*\|fu3i4yui34yf4ui\|4g4i5gjkjh x 1 = 254715247900
+End
+PS C:\Users\moopy\Desktop\dev\jregex\com\moopyglue>
