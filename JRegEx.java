@@ -1,6 +1,25 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Pattern;
 
 public class JRegEx {
+
+    public static String[] readLines(final String filename) throws Exception {
+        
+        final FileReader fileReader = new FileReader(filename);
+        final BufferedReader bufferedReader = new BufferedReader(fileReader);
+        final List<String> lines = new ArrayList<String>();
+        String line = null;
+        while ((line = bufferedReader.readLine()) != null) {
+            lines.add(line);
+        }
+        bufferedReader.close();
+        return lines.toArray(new String[lines.size()]);
+        
+    }
+
     public static void main(final String[] args) {
 
         final Integer repeat = 1;
@@ -8,9 +27,8 @@ public class JRegEx {
         System.out.println("Started");
 
         try {
-            final FileArrayProvider fap = new FileArrayProvider();
-            final String[] regexs = fap.readLines("regexs.txt");
-            final String[] testlines = fap.readLines("testlines.txt");
+            final String[] regexs = readLines("regexs.txt");
+            final String[] testlines = readLines("testlines.txt");
             for (final String r : regexs) {
                 final long startTime = System.nanoTime();
                 for (final String tl : testlines) {
