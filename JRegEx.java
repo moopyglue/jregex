@@ -27,8 +27,12 @@ public class JRegEx {
         System.out.println("Started");
 
         try {
-            final String[] regexs = readLines("regexs.txt");
-            final String[] testlines = readLines("testlines.txt");
+        
+            if(args.length != 2) {
+                throw new java.lang.Exception("parameters missing need REGEX file and SEARCH file");
+            }
+            final String[] regexs = readLines(args[0]);
+            final String[] testlines = readLines(args[1]);
             for (final String r : regexs) {
                 final long startTime = System.nanoTime();
                 for (final String tl : testlines) {
