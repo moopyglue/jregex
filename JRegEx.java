@@ -42,11 +42,11 @@ public class JRegEx {
                     m = false;
                     timeElapsed = System.nanoTime() - startTime;
                     if( timeElapsed > maxNanoSec ) {
-                        System.out.printf("%25s / %s\n","BREATCHED_MAX_LENGTH",r);
+                        System.out.printf("%24s / %s\n","BREATCHED_MAX_LENGTH",r);
                         continue outerloop;
                     }
                 }
-                System.out.printf("%25s / %s\n",""+timeElapsed,r);
+                System.out.printf("%24.6f / %s\n",timeElapsed/1000000000f,r);
             }
         } catch (final Exception e) {
             e.printStackTrace();
