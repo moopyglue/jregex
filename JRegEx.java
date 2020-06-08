@@ -22,9 +22,9 @@ public class JRegEx {
 
     public static void main(final String[] args) {
 
-        final Integer repeat = 1;
-
         System.out.println("Started");
+
+        final Long maxNanoSec = 30000000000l; /* 30 secs */
 
         try {
         
@@ -33,16 +33,20 @@ public class JRegEx {
             }
             final String[] regexs = readLines(args[0]);
             final String[] testlines = readLines(args[1]);
+            outerloop:
             for (final String r : regexs) {
                 final long startTime = System.nanoTime();
+                long timeElapsed = 0;
                 for (final String tl : testlines) {
-                    for (int i = 1; i <= repeat; i++) {
-                        boolean m = Pattern.matches(r, tl);
-                        m = false;
+                    boolean m = Pattern.matches(r, tl);
+                    m = false;
+                    timeElapsed = System.nanoTime() - startTime;
+                    if( timeElapsed > maxNanoSec ) {
+                        System.out.printf("%25s / %s\n","BREATCHED_MAX_LENGTH",r);
+                        continue outerloop;
                     }
                 }
-                final long timeElapsed = System.nanoTime() - startTime;
-                System.out.printf("%25s / x%d / %s\n",""+timeElapsed,repeat,r);
+                System.out.printf("%25s / %s\n",""+timeElapsed,r);
             }
         } catch (final Exception e) {
             e.printStackTrace();
