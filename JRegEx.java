@@ -42,7 +42,7 @@ public class JRegEx {
                     }
                 }
                 final long timeElapsed = System.nanoTime() - startTime;
-                System.out.printf("%60s x %d = %s\n",r,repeat,"" + timeElapsed);
+                System.out.printf("%25s / x%d / %s\n",""+timeElapsed,repeat,r);
             }
         } catch (final Exception e) {
             e.printStackTrace();
